@@ -1,0 +1,300 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Image Grid for Photography & Design Pages */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    max-width: 600px;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Contact Page Styles */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the photo circular */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    min-width: 300px;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #444;
+}
+// script.js
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    
+    // If there are no slides on the page, stop the script
+    if (slides.length === 0) return; 
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>My Creative Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="photography.html">Photography</a>
+            <a href="design.html">Design</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to my 2026 Portfolio</h2>
+        <p>A collection of my recent photography and design work. We will be adding more content as we go through this semester.</p>
+        
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="photo1.jpg" alt="Featured Photo 1">
+            </div>
+            <div class="slide">
+                <img src="design1.png" alt="Featured Design 1">
+            </div>
+            <div class="slide">
+                <img src="photo2.jpg" alt="Featured Photo 2">
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photography | My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Photography</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="photography.html">Photography</a>
+            <a href="design.html">Design</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>My Photography Work</h2>
+        <p>Explore my recent photo captures.</p>
+        
+        <div class="gallery-grid">
+            <img src="photo1.jpg" alt="Photo 1">
+            <img src="photo2.jpg" alt="Photo 2">
+            <img src="photo3.jpg" alt="Photo 3">
+            <img src="photo4.jpg" alt="Photo 4">
+            <img src="photo5.jpeg" alt="Photo 5">
+            <img src="photo6.jpeg" alt="Photo 6">
+            <img src="photo7.jpeg" alt="Photo 7">
+            <img src="photo8.jpeg" alt="Photo 8">
+            <img src="photo9.jpeg" alt="Photo 9">
+            <img src="photo10.jpg" alt="Photo 10">
+        </div>
+    </main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Design | My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Design</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="photography.html">Photography</a>
+            <a href="design.html">Design</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>My Design Work</h2>
+        <p>Explore my graphic design and digital art projects.</p>
+        
+        <div class="gallery-grid">
+            <img src="design1.png" alt="Design 1">
+            <img src="design2.png" alt="Design 2">
+            <img src="design3.jpeg" alt="Design 3">
+            <img src="design4.png" alt="Design 4">
+            <img src="design5.png" alt="Design 5">
+            <img src="design6.png" alt="Design 6">
+            <img src="design7.jpeg" alt="Design 7">
+            <img src="design8.png" alt="Design 8">
+            <img src="design9.jpeg" alt="Design 9">
+            <img src="design10.jpeg" alt="Design 10">
+        </div>
+    </main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Contact Me</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="photography.html">Photography</a>
+            <a href="design.html">Design</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Let's Get in Touch</h2>
+        
+        <div class="contact-container">
+            <img src="photo1.jpg" alt="Photo of me" class="profile-photo">
+            
+            <form action="#" method="get">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
